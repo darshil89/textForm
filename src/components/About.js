@@ -1,30 +1,32 @@
 import React, {useState} from 'react'
 export default function About() {
-  const [myStyle, setmyStyle] = useState({
-    color: "black",
-    backgroundColor: "white",
-});
-const [btnText, setbtnText] = useState("Enable Dark Mode")
+   const [myStyle, setmyStyle] = useState({
+     color: "black",
+     backgroundColor: "white",
+ });
+ const [btnText, setbtnText] = useState("Enable Dark Mode")
 
-const toggleStyle = () => {
-    if (myStyle.color == "white"){
+// const toggleStyle = () => {
+//     if (myStyle.color == "white"){
         
-        setmyStyle({
-            color: "black",
-            backgroundColor: "white",
-        });
-        setbtnText("Enable Dark Mode")
-    }
-    else {
-        setmyStyle({
-            color: "white",
-            backgroundColor: "black",
-            border: '2px solid white'
-      });
-      setbtnText("Enable Light Mode")
-    }
-  };
-
+//         setmyStyle({
+//             color: "black",
+//             backgroundColor: "white",
+//         });
+//         setbtnText("Enable Dark Mode")
+//     }
+//     else {
+//         setmyStyle({
+//             color: "white",
+//             backgroundColor: "black",
+//             border: '2px solid white'
+//       });
+//       setbtnText("Enable Light Mode")
+//     }
+//   };
+// let myStyle = {
+//   color :props.mode ===
+// }
   
 
   return (
@@ -43,7 +45,7 @@ const toggleStyle = () => {
                 aria-controls="collapseOne"
                 style={myStyle}
               >
-                Accordion Item #1
+                <strong>Analyze Your Text</strong>
               </button>
             </h2>
             <div
@@ -76,7 +78,7 @@ const toggleStyle = () => {
                 aria-controls="collapseTwo"
                 style={myStyle}
               >
-                Accordion Item #2
+                <strong>Free to use</strong>
               </button>
             </h2>
             <div
@@ -109,7 +111,7 @@ const toggleStyle = () => {
                 aria-controls="collapseThree"
                 style={myStyle}
               >
-                Accordion Item #3
+                <strong>Browser Compatible</strong>
               </button>
             </h2>
             <div
@@ -132,14 +134,14 @@ const toggleStyle = () => {
             </div>
           </div>
         </div>
-        <button
+        {/* <button
           onClick={toggleStyle}
           
           type="button"
           className="btn btn-primary my-2"
         >
           {btnText}
-        </button>
+        </button> */}
       </div>
       
     </>

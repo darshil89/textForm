@@ -59,7 +59,7 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter >
         <Navbar
           currState={currState}
           mode={mode}
@@ -85,7 +85,7 @@ function App() {
             element={
               <TextForm
                 showAlert={showAlert}
-                heading="Enter the text to analyze"
+                heading="TextUtils"
                 mode={mode}
                 mode2={mode2}
                 currState={currState}

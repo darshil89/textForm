@@ -82,7 +82,7 @@ export default function TextForm(props) {
         <div className="mb-3">
           <textarea
             style={{
-              backgroundColor: props.currState =="light_dark"?(props.mode === "light" ? "white" : "gray"):(props.mode2 === "light" ? "white" : "#4F7942"),
+              backgroundColor: props.currState =="light_dark"?(props.mode === "light" ? "white" : "#212324"):(props.mode2 === "light" ? "white" : "#4F7942"),
               color: props.currState =="light_dark"?(props.mode === "light" ? "black" : "white"):(props.mode2 === "light" ? "black" : "white")
             }}
             className="form-control"
@@ -93,19 +93,19 @@ export default function TextForm(props) {
             rows="8"
           ></textarea>
         </div>
-        <button className={`btn btn-${props.btnState} mx-2 my-1`} onClick={UpperClick} >
+        <button disabled={text.length===0} className={`btn btn-${props.btnState} mx-2 my-1`} onClick={UpperClick} >
           Convet to UpperCase
         </button>
-        <button className={`btn btn-${props.btnState} mx-2 my-1`} onClick={LowerClick} >
+        <button disabled={text.length===0} className={`btn btn-${props.btnState} mx-2 my-1`} onClick={LowerClick} >
           Convet to LowerCase
         </button>
-        <button className={`btn btn-${props.btnState} mx-2 my-1`} onClick={Clear} >
+        <button disabled={text.length===0} className={`btn btn-${props.btnState} mx-2 my-1`} onClick={Clear} >
           Clear
         </button>
-        <button className={`btn btn-${props.btnState} mx-2 my-1`} onClick={Capitalize} >
+        <button disabled={text.length===0} className={`btn btn-${props.btnState} mx-2 my-1`} onClick={Capitalize} >
           Capitalize
         </button>
-        <button className={`btn btn-${props.btnState} mx-2 my-1`} onClick={Find} >
+        <button disabled={text.length===0} className={`btn btn-${props.btnState} mx-2 my-1`} onClick={Find} >
           Find
         </button>
       </div>
@@ -115,11 +115,11 @@ export default function TextForm(props) {
       >
         <h2>Your Text Summary </h2>
         <p>
-          {text.split(" ").length} words , {text.length} characters
+          {text.split(" ").filter((element)=>{return element.length!=0}).length} words , {text.length} characters
         </p>
-        <p>Time Taken To Read --- {0.008 * text.split(" ").length} minutes</p>
+        <p>Time Taken To Read --- {0.008 * text.split(" ").filter((element)=>{return element.length!=0}).length} minutes</p>
         <h2>Preview</h2>
-        <p>{text.length > 0 ? text : "Enter Something to preview"}</p>
+        <p>{text.length > 0 ? text : "Nothing to Preview !"}</p>
       </div>
     </>
   );

@@ -6,13 +6,15 @@ export default function Alert(props) {
     return str.charAt(0).toUpperCase() + str.slice(1);
   };
   return (
-    props.alert && (
-      <div
-        className={`alert alert-${props.alert.type} alert-dismissible fade show`}
-        role="alert"
-      >
-        <strong>{Capitalize(props.alert.type)}</strong> {props.alert.msg}
-      </div>
-    )
+    <div style={{height:'60px'}}>
+      {props.alert && (
+        <div
+          className={`alert alert-${props.alert.type} alert-dismissible fade show`}
+          role="alert"
+        >
+          <strong>{Capitalize(props.alert.type)}</strong> {props.alert.msg}
+        </div>
+      )}
+    </div>
   );
 }
